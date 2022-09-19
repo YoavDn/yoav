@@ -8,7 +8,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.3.3",
     "@tailwindcss/typography": "^0.5.7",
+    "@volar-plugins/prettier": "^1.1.4",
     "autoprefixer": "^10.4.11",
     "nuxt": "3.0.0-rc.10",
     "postcss": "^8.4.16",

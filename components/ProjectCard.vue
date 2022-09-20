@@ -65,7 +65,11 @@ function showContent() {
                     <img v-else :src="ArrowUp" alt="" />
                 </span>
             </h2>
-            <p :style="isLightBg(props.project.name) ? { color: 'black' } : ''">
+            <p
+                :class="{
+                    'text-black font-bold': isLightBg(props.project.name),
+                }"
+            >
                 {{ props.project.description }}
             </p>
         </div>

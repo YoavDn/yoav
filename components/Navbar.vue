@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-
+import linkedin from "~/assets/imgs/linkedi.svg";
 </script>
 
 
@@ -7,16 +7,37 @@
 	<div class="navbar">
 		<div class="container">
 			<div class="logo">Y.M</div>
-			<div class="nav-links">
-				<li class="nav-link">
-					<nuxt-link to="/about"> ABOUT </nuxt-link>
-				</li>
-				<li class="nav-link">
-					<nuxt-link to="/projects"> PROJECTS </nuxt-link>
-				</li>
-				<li class="nav-link">
-					<nuxt-link to="/about"> CONTACT </nuxt-link>
-				</li>
+			<div class="links flex items-center">
+				<div class="nav-links">
+					<li class="nav-link">
+						<nuxt-link to="/about"> ABOUT </nuxt-link>
+					</li>
+					<li class="nav-link">
+						<nuxt-link to="/projects"> PROJECTS </nuxt-link>
+					</li>
+					<li class="nav-link">
+						<nuxt-link to="/about"> CONTACT </nuxt-link>
+					</li>
+				</div>
+				<div class="svg-links flex">
+					<li>
+						<a href="" class="svg-link">
+							<img
+								src="~/assets/imgs/github.svg"
+								alt="github-svg"
+							/>
+						</a>
+					</li>
+
+					<li>
+						<a href="" class="svg-link">
+							<img
+								src="~/assets/imgs/linkedin.svg"
+								alt="linkedin-svg"
+							/>
+						</a>
+					</li>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -38,17 +59,29 @@
 		@apply text-xl text-black bg-lime-400 p-1;
 	}
 
-	.nav-links {
-		@apply sm:flex gap-4 px-2 hidden;
-
-		.nav-link {
-			@apply text-lime-300  px-4 py-2 rounded-md;
-			transition: all ease 0.2s;
-			font-weight: 600;
+	.links {
+		li {
+			cursor: pointer;
+			@apply text-lime-300 px-4 py-2 rounded-md;
 
 			&:hover {
 				@apply bg-opacity-25 bg-lime-300;
 			}
+		}
+	}
+
+	.nav-links {
+		@apply sm:flex gap-4 px-2 hidden;
+
+		.nav-link {
+			transition: all ease 0.2s;
+			font-weight: 600;
+		}
+	}
+
+	.svg-links {
+		.svg-link {
+			@apply fill-lime-300 h-6 w-6;
 		}
 	}
 }

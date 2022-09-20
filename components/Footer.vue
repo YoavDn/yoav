@@ -4,12 +4,17 @@
 
 
 <template>
-    <div class="footer">
-        footer
-    </div>
+	<div class="footer content">
+		<h2>Contact.</h2>
+	</div>
 </template>
 
 
 <style lang='scss'>
-
+.footer {
+	h2 {
+		// @apply color
+		text-align: center;
+	}
+}
 </style>

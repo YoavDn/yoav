@@ -8,7 +8,7 @@ import FeatureProjects from "~~/components/FeatureProjects.vue";
 <template>
     <Hero />
     <Content />
-    <FeatureProjects id="projects" />
+    <FeatureProjects />
 </template>
 
 

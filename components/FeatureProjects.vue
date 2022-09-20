@@ -15,6 +15,13 @@ const projects = [
 		url: "https://sound-wave-project.herokuapp.com/#/",
 	},
 	{
+		name: "Appsus",
+		description:
+			"An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.",
+		img: AppsusImgSrc,
+		url: "https://appsus-afik-yoav.netlify.app/#/",
+	},
+	{
 		name: "Typester",
 		description:
 			"Typester is a modern design typing test application inspired by Monkeytype.It features a variety of test modes, including a dark mode for the night owls, and also saves user typing tests history.",
@@ -28,13 +35,7 @@ const projects = [
 		img: ChooseYourFrameworkImgSrc,
 		url: "https://choose-your-framework.vercel.app/",
 	},
-	{
-		name: "Appsus",
-		description:
-			"An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.",
-		img: AppsusImgSrc,
-		url: "https://appsus-afik-yoav.netlify.app/#/",
-	},
+
 	{
 		name: "MemeGen",
 		description:

@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import ArrowUp from "~~/assets/imgs/arrow-up.svg";
+
 const props = defineProps<{
     project: {
         name: string;
@@ -8,20 +10,55 @@ const props = defineProps<{
     };
 }>();
 
+const cardContentShown = ref<Boolean>(false);
+
 function goToProject(url: string) {
+    if (window.innerWidth < 450) return;
+
     window.open(url);
+}
+
+function isLightBg(name: string) {
+    return name === "Appsus" || name === "MemeGen" ? true : false;
+}
+
+function showContent() {
+    cardContentShown.value = !cardContentShown.value;
 }
 </script>
 
 
 <template>
     <article class="project-card" @click="goToProject(props.project.url)">
-        <div class="overlay"></div>
-        <div class="text">
-            <h2>
+        <div class="overlay md:hidden"></div>
+        <div v-if="cardContentShown" class="overlay overlay-mobile"></div>
+        <div
+            class="text"
+            :class="{
+                'translate-y-0': cardContentShown,
+                'translate-y-full': !cardContentShown,
+            }"
+        >
+            <h2
+                @click="showContent"
+                :class="{
+                    'translate-y-0': cardContentShown,
+                    'translate-y-[-153%]': !cardContentShown,
+                }"
+                class="flex gap-2 items-center"
+                :style="isLightBg(props.project.name) ? { color: 'black' } : ''"
+            >
                 {{ props.project.name }}
+                <span
+                    :class="{ 'rotate-180': cardContentShown }"
+                    v-if="props.project.name !== 'More...'"
+                >
+                    <img :src="ArrowUp" alt="" />
+                </span>
             </h2>
-            <p>{{ props.project.description }}</p>
+            <p :style="isLightBg(props.project.name) ? { color: 'black' } : ''">
+                {{ props.project.description }}
+            </p>
         </div>
         <img
             v-if="props.project.img"
@@ -40,20 +77,31 @@ function goToProject(url: string) {
     .overlay {
         @apply absolute inset-0 bg-gray-900/0 z-0;
         @apply absolute inset-0 bg-black/20 coarse:bg-[color:rgb(4_23_78/20%)] backdrop-blur-lg coarse:backdrop-blur-sm;
-        @apply fine:opacity-0;
+        @apply opacity-0;
         @apply transition-opacity duration-500;
+
+        &.overlay-mobile {
+            @apply opacity-100;
+        }
     }
 
     .text {
         @apply absolute bottom-0 left-0 p-6 z-20;
         @apply whitespace-normal;
         @apply transition-transform duration-500;
-        @apply fine:translate-y-full;
+        @apply sm:translate-y-full;
 
         h2 {
             @apply text-lime-400 font-bold text-3xl py-1;
-            @apply fine:translate-y-[-150%];
+            @apply md:translate-y-[-153%];
             @apply transition duration-500;
+
+            span {
+                @apply md:hidden transition-transform duration-300;
+                img {
+                    @apply w-8;
+                }
+            }
         }
 
         p {
@@ -73,16 +121,16 @@ function goToProject(url: string) {
         @apply outline outline-2 outline-lime-50;
 
         .text {
-            @apply translate-y-0;
+            @apply md:translate-y-0;
             h2 {
                 // @apply translate-y-0;
 
-                @apply translate-y-0 opacity-100;
+                @apply md:translate-y-0 opacity-100;
             }
         }
 
         .overlay {
-            @apply opacity-100;
+            @apply md:opacity-100;
         }
     }
 }

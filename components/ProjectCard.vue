@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import ArrowUp from "~~/assets/imgs/arrow-up.svg";
+import ArrowUpBlack from "~~/assets/imgs/arrow-up-black.svg";
 
 const props = defineProps<{
     project: {
@@ -13,12 +14,13 @@ const props = defineProps<{
 const cardContentShown = ref<Boolean>(false);
 
 function goToProject(url: string) {
-    if (window.innerWidth < 450) return;
+    // if (window.innerWidth < 450) return;
 
     window.open(url);
 }
 
 function isLightBg(name: string) {
+    // return false;
     return name === "Appsus" || name === "MemeGen" ? true : false;
 }
 
@@ -30,9 +32,10 @@ function showContent() {
 
 <template>
     <article class="project-card" @click="goToProject(props.project.url)">
-        <div class="overlay md:hidden"></div>
+        <div class="overlay hidden md:block"></div>
         <div v-if="cardContentShown" class="overlay overlay-mobile"></div>
         <div
+            @click.stop="showContent"
             class="text"
             :class="{
                 'translate-y-0': cardContentShown,
@@ -40,10 +43,11 @@ function showContent() {
             }"
         >
             <h2
-                @click="showContent"
                 :class="{
-                    'translate-y-0': cardContentShown,
+                    'translate-y-0 ': cardContentShown,
                     'translate-y-[-153%]': !cardContentShown,
+                    'bg-lime-400 bg-opacity-50':
+                        isLightBg(props.project.name) && !cardContentShown,
                 }"
                 class="flex gap-2 items-center"
                 :style="isLightBg(props.project.name) ? { color: 'black' } : ''"
@@ -53,7 +57,12 @@ function showContent() {
                     :class="{ 'rotate-180': cardContentShown }"
                     v-if="props.project.name !== 'More...'"
                 >
-                    <img :src="ArrowUp" alt="" />
+                    <img
+                        v-if="isLightBg(props.project.name)"
+                        :src="ArrowUpBlack"
+                        alt=""
+                    />
+                    <img v-else :src="ArrowUp" alt="" />
                 </span>
             </h2>
             <p :style="isLightBg(props.project.name) ? { color: 'black' } : ''">

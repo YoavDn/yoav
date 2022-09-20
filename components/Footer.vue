@@ -34,7 +34,7 @@ import ArrowSvg from "~/assets/imgs/down-arrow.svg";
             <a href="#"> Back to top </a>
         </div>
 
-        <h3 class="text-base font-400 text-center">
+        <h3 class="text-base font-400 text-center mt-10">
             &copy; 2022 Yoav Mendelson
         </h3>
     </div>
@@ -44,7 +44,7 @@ import ArrowSvg from "~/assets/imgs/down-arrow.svg";
 <style scoped lang='scss'>
 .footer {
     h2 {
-        @apply mb-24;
+        @apply mb-20;
         text-align: center;
     }
 
@@ -67,7 +67,7 @@ import ArrowSvg from "~/assets/imgs/down-arrow.svg";
 }
 
 .back-to-top {
-    @apply font-nanum m-auto text-center my-14;
+    @apply font-nanum m-auto  text-center mt-24;
 
     a {
         @apply text-4xl;

@@ -2,6 +2,7 @@ import tailwindTypography from '@tailwindcss/typography';
 import postcssConfig from './postcss.config.js'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+
      css: [
         '@/assets/styles/global.scss',
     ],

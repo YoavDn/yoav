@@ -11,14 +11,14 @@
 			initially I started Coding out of pure curiosity, it became a hobby
 			and after a while I decided to take the next step and go for it. I’m
 			a resent graduate from the
-			<a href="https://www.coding-academy.org/index.php">
-				Coding Academy
-			</a>
-			Bootcamp Where I created some of
-			<a href="#projects"> my projects </a>. Currency I’m searching for
-			the an opportunity where i could make an impact. Be sure to
-			<a href="#contact"> contact </a> me if you have any questions of
-			just wanna talk :)
+			<span>
+				<a href="https://www.coding-academy.org/index.php">
+					Coding Academy
+				</a></span
+			>
+			Bootcamp Where I created some of my projects . Currency I’m
+			searching for the an opportunity where i could make an impact. Be
+			sure to contact me if you have any questions of just wanna talk :)
 		</p>
 
 		<p>
@@ -44,7 +44,7 @@
 </template>
 
 
-<style lang='scss'>
+<style  lang='scss'>
 .content {
 	h2 {
 		@apply text-3xl font-900 my-6;

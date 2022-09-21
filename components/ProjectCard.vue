@@ -15,7 +15,7 @@ const cardContentShown = ref<Boolean>(false);
 
 function goToProject(url: string) {
     // if (window.innerWidth < 450) return;
-
+    console.log("hiii");
     window.open(url);
 }
 
@@ -31,11 +31,11 @@ function showContent() {
 
 
 <template>
-    <article class="project-card" @click="goToProject(props.project.url)">
+    <article class="project-card" v-on:click="goToProject(props.project.url)">
         <div class="overlay hidden md:block"></div>
         <div v-if="cardContentShown" class="overlay overlay-mobile"></div>
         <div
-            @click.stop="showContent"
+            @click="showContent"
             class="text"
             :class="{
                 'translate-y-0': cardContentShown,
@@ -60,14 +60,14 @@ function showContent() {
                     <img
                         v-if="isLightBg(props.project.name)"
                         :src="ArrowUpBlack"
-                        alt=""
+                        alt="aroow"
                     />
                     <img v-else :src="ArrowUp" alt="" />
                 </span>
             </h2>
             <p
                 :class="{
-                    'text-black font-bold': isLightBg(props.project.name),
+                    'text-slate-100 font-bold': isLightBg(props.project.name),
                 }"
             >
                 {{ props.project.description }}
@@ -82,7 +82,7 @@ function showContent() {
 </template>
 
 
-<style lang='scss'>
+<style   lang='scss'>
 .project-card {
     @apply relative aspect-square overflow-hidden cursor-pointer rounded-lg bg-lime-400 bg-opacity-20;
     @apply transition-all duration-500;

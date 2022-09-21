@@ -6,9 +6,11 @@ import FeatureProjects from "~~/components/FeatureProjects.vue";
 
 
 <template>
-    <Hero />
-    <Content />
-    <FeatureProjects />
+	<div>
+		<Hero />
+		<Content />
+		<FeatureProjects />
+	</div>
 </template>
 
 

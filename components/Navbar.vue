@@ -119,6 +119,10 @@ function toggleMenu() {
     li {
       @apply bg-opacity-10 bg-lime-300;
       @apply transition-colors;
+
+      &.linkedin-svg {
+        @apply hidden sm:flex;
+      }
     }
     .svg-link {
       @apply fill-lime-300 h-6 w-6;

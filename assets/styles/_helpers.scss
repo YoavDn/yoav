@@ -25,9 +25,9 @@
   opacity: 1;
 }
 
-// @media (prefers-reduced-motion: reduce) {
-//   .scroll-hidden {
-//     transition: none !important;
-//     transform: translateX(0%);
-//   }
-// }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hidden {
+    transition: none !important;
+    transform: translateX(0%);
+  }
+}

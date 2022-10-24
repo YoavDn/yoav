@@ -15,6 +15,7 @@ const projects = [
       'canvasParty is an HTML canvas animations library. created for adding highly interactive backgrounds with ease. It has full support for both Vue and React and has documentation guide with examples.',
     img: CanvasPartySrc,
     url: 'https://canvas-party.vercel.app/',
+    id: 1,
   },
   {
     name: 'SoundWave',
@@ -22,6 +23,7 @@ const projects = [
       'SoundWave is a music streaming platform inspired by Spotify. You can listen to your favorite music and create shared playlists for you and your friends to enjoy together in real-time.',
     img: SoundWaveImgSrc,
     url: 'https://sound-wave-project.herokuapp.com/#/',
+    id: 2,
   },
   {
     name: 'Appsus',
@@ -29,6 +31,7 @@ const projects = [
       'An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.',
     img: AppsusImgSrc,
     url: 'https://appsus-afik-yoav.netlify.app/#/',
+    id: 3,
   },
   {
     name: 'Typester',
@@ -36,6 +39,7 @@ const projects = [
       'Typester is a modern design typing test application inspired by Monkeytype.It features a variety of test modes, including a dark mode for the night owls, and also saves user typing tests history.',
     img: TypesterImgSrc,
     url: 'https://typester-app.herokuapp.com/',
+    id: 4,
   },
   {
     name: 'Choose your framework',
@@ -43,6 +47,7 @@ const projects = [
       'A cute little helper game I made for choosing a Javascript UI framework.',
     img: ChooseYourFrameworkImgSrc,
     url: 'https://choose-your-framework.vercel.app/',
+    id: 5,
   },
 
   {
@@ -51,23 +56,31 @@ const projects = [
       'A meme-maker app where you can make your meme, download, share, and save it.',
     img: MemeGenImgSrc,
     url: 'https://meme-generator-ac.netlify.app/',
+    id: 6,
   },
   {
     name: 'More...',
     description: 'Check out more Projects on GitHub',
     img: '',
     url: 'https://github.com/YoavDn',
+    id: 7,
   },
 ]
 </script>
 
 <template>
-  <div class="title content" id="projects">
+  <div class="title content scroll-hidden" id="projects">
     <h2>Projects.</h2>
   </div>
   <div class="projects-layout">
     <div class="projects-container">
-      <ProjectCard v-for="project in projects" :project="project" />
+      <ProjectCard
+        v-for="project in projects"
+        class="scroll-hidden"
+        :key="project.id"
+        :project="project"
+        :style="{ 'transition-delay': 100 * project.id + 'ms' }"
+      />
     </div>
   </div>
 </template>

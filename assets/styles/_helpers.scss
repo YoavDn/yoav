@@ -12,3 +12,22 @@
   //   opacity: 0;
   transition: all 0.2s ease;
 }
+
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(20%);
+
+  transition: all 1s ease;
+}
+
+.show {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+// @media (prefers-reduced-motion: reduce) {
+//   .scroll-hidden {
+//     transition: none !important;
+//     transform: translateX(0%);
+//   }
+// }

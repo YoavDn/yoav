@@ -1,49 +1,49 @@
-import { title } from "process";
+import { title } from 'process'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-     head: {
+  head: {
     title: 'Yoav Mendelson | Web Developer',
+    viewport: 'width=500, initial-scale=1',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-				hid: "description",
-				name: "description",
-				content:
-					"A Web Developer and Designer based in Haifa, Israel, with an eye for great design (UI) and user experience (UX).",
-			},
-			{
-				hid: "keywords",
-				name: "keywords",
-				content:
-					"Yoav Mendelson, web dev, UX/UI, software developer, design".split(
-						","
-					),
-			},
-		],
-		link: [
-			{ rel: "icon", type: "image/x-icon", href: "/icon.png" },
-		],
+        name: 'description',
+        content:
+          'A web Developer based in Haifa, Israel. Passionate about building beautiful websites and libraries.',
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'Yoav Mendelson, Web Dev, UX/UI, software developer, design'.split(
+            ','
+          ),
+      },
+      { name: 'og:title', content: 'Yoav Mendelson | Web Developer' },
+      {
+        name: 'og:description',
+        content:
+          'A web Developer based in Haifa, Israel. Passionate about building beautiful websites and libraries.',
+      },
+      { name: 'og:orl', content: 'https://yoav.vercel.app' },
+      { name: 'og:image', content: '@/assets/imgs/mysite.png' },
+    ],
   },
 
-     css: [
-        '@/assets/styles/global.scss',
-    ],
-    modules: ['@nuxtjs/tailwindcss'],
+  css: ['@/assets/styles/global.scss'],
+  modules: ['@nuxtjs/tailwindcss'],
 
-    tailwindcss: {
-        cssPath: '@/assets/styles/global.scss',
-        configPath: '@/tailwind.config.js',
-        //  config: {
+  tailwindcss: {
+    cssPath: '@/assets/styles/global.scss',
+    configPath: '@/tailwind.config.js',
+    //  config: {
     //   plugins: [tailwindTypography]
     // }
-    },
-   
-    build: {
-        postcss: {
-            postcssOptions: require('./postcss.config.js')
-        }
-    }
-})
+  },
 
+  build: {
+    postcss: {
+      postcssOptions: require('./postcss.config.js'),
+    },
+  },
+})

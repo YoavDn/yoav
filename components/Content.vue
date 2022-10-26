@@ -52,16 +52,13 @@ onMounted(() => {
   }
   p {
     @apply mb-12;
-    @apply text-base sm:text-xl leading-relaxed text-lime-50;
+    @apply text-xl  leading-relaxed text-lime-50;
     font-weight: 300;
   }
 }
 
 .skills {
   @apply mb-16;
-  .skills-title {
-    @apply font-700 text-2xl;
-  }
 }
 
 .about {

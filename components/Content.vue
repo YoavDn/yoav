@@ -10,7 +10,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main class="my-16">
     <section class="about content" id="about">
       <h2 class="scroll-hidden">About.</h2>
       <p class="scroll-hidden">

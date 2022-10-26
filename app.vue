@@ -4,7 +4,6 @@ import Footer from '~~/components/Footer.vue'
 
 useHead({
   title: 'Yoav Mendelson | Web Developer',
-  viewport: 'width=500, initial-scale=1',
   meta: [
     {
       name: 'description',

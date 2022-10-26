@@ -52,7 +52,7 @@ onMounted(() => {
   }
   p {
     @apply mb-12;
-    @apply text-xl  leading-relaxed text-lime-50;
+    @apply text-base sm:text-xl leading-relaxed text-lime-50;
     font-weight: 300;
   }
 }

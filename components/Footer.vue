@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import LinkSvg from "~~/assets/imgs/link.svg";
-import ArrowSvg from "~/assets/imgs/down-arrow.svg";
+import LinkSvg from '~~/assets/imgs/link.svg'
+import ArrowSvg from '~/assets/imgs/down-arrow.svg'
 </script>
 
 
@@ -35,7 +35,7 @@ import ArrowSvg from "~/assets/imgs/down-arrow.svg";
 		</div>
 
 		<h3 class="text-base font-400 text-center mt-10">
-			&copy; 2022 Yoav Mendelson
+			&copy;2022 Yoav Mendelson
 		</h3>
 	</div>
 </template>
@@ -56,7 +56,7 @@ import ArrowSvg from "~/assets/imgs/down-arrow.svg";
 			@apply text-xl;
 
 			&:hover {
-				@apply underline-offset-4 decoration-primary underline;
+				@apply underline-offset-4 decoration-wavy underline;
 			}
 		}
 

@@ -21,12 +21,12 @@ onMounted(() => {
 </script>
 
 <template>
-	<!-- <canvas-party
+	<canvas-party
 		v-if="mounted"
 		class="canvas-party"
 		:type="'confetti'"
 		:options="canvasPartyOptions"
-	/> -->
+	/>
 	<div class="hero">
 		<div class="hero-title">
 			<h2>

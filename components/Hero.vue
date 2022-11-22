@@ -11,7 +11,7 @@ import CanvasParty from '@canvas-party/vue'
 const showTvLinks = ref<Boolean>(false)
 const mounted = ref(false)
 const canvasPartyOptions = {
-	colors: ['#A3E635', '#A3E635'],
+	colors: ['#A3E635', '#6A9523'],
 	count: 80,
 }
 
@@ -144,7 +144,7 @@ onMounted(() => {
 }
 
 .hero-title {
-	@apply py-0 mx-auto w-full;
+	@apply py-0 mx-auto w-full z-10;
 	@apply text-xl max-w-full;
 
 	h2 {

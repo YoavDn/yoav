@@ -12,7 +12,7 @@ const showTvLinks = ref<Boolean>(false)
 const mounted = ref(false)
 const canvasPartyOptions = {
 	colors: ['#A3E635', '#6A9523'],
-	count: 80,
+	count: 81,
 }
 
 onMounted(() => {

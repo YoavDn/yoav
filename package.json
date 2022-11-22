@@ -18,6 +18,7 @@
     "tailwindcss": "^3.1.8"
   },
   "dependencies": {
+    "@canvas-party/vue": "^0.0.20",
     "@vercel/analytics": "^0.1.5",
     "@vueuse/components": "^9.3.1",
     "@vueuse/core": "^9.3.1"

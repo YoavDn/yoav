@@ -6,14 +6,27 @@ import DoodleLineSvg4 from '~~/assets/imgs/doodle-line4.svg'
 import DoodleLineSvg5 from '~~/assets/imgs/doodle-line5.svg'
 import GithubSvg from '~~/assets/imgs/github.svg'
 import LinkedinSvg from '~~/assets/imgs/linkedin.svg'
+import CanvasParty from '@canvas-party/vue'
 
 const showTvLinks = ref<Boolean>(false)
+const mounted = ref(false)
+const canvasPartyOptions = {
+	colors: ['#A3E635', '#A3E635'],
+	count: 80,
+}
+
+onMounted(() => {
+	mounted.value = true
+})
 </script>
 
 <template>
-	<!-- <div class="blur-bg">
-		<div class="light"> </div>
-	 </div> -->
+	<canvas-party
+		v-if="mounted"
+		class="canvas-party"
+		:type="'confetti'"
+		:options="canvasPartyOptions"
+	/>
 	<div class="hero">
 		<div class="hero-title">
 			<h2>
@@ -190,5 +203,10 @@ const showTvLinks = ref<Boolean>(false)
 		transform: rotate(43deg);
 		scale: 1.01;
 	}
+}
+.canvas-party {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
 }
 </style>

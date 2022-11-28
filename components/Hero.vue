@@ -7,26 +7,34 @@ import DoodleLineSvg5 from '~~/assets/imgs/doodle-line5.svg'
 import GithubSvg from '~~/assets/imgs/github.svg'
 import LinkedinSvg from '~~/assets/imgs/linkedin.svg'
 import CanvasParty from '@canvas-party/vue'
+import { ShallowRef } from 'vue'
 
 const showTvLinks = ref<Boolean>(false)
 const mounted = ref(false)
+const dynamicComponent = shallowRef(null)
 const canvasPartyOptions = {
 	colors: ['#A3E635', '#6A9523'],
 	count: 81,
 }
 
 onMounted(() => {
-	mounted.value = true
+	import('@canvas-party/vue').then(module => {
+		dynamicComponent.value = module.default
+		console.log(dynamicComponent.value)
+	})
 })
 </script>
 
 <template>
-	<!-- <canvas-party
-		v-if="mounted"
-		class="canvas-party"
+	<component
+		class="canvas-example"
+		v-if="dynamicComponent"
+		:is="dynamicComponent"
 		:type="'confetti'"
 		:options="canvasPartyOptions"
-	/> -->
+	>
+	</component>
+
 	<div class="hero">
 		<div class="hero-title">
 			<h2>

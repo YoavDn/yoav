@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
 	<component
-		class="canvas-example"
+		class="canvas-party"
 		v-if="dynamicComponent"
 		:is="dynamicComponent"
 		:type="'confetti'"

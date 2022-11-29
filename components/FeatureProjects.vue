@@ -26,15 +26,6 @@ const projects = [
 		url: 'https://sound-wave-project.herokuapp.com/#/',
 		id: 2,
 	},
-
-	{
-		name: 'Appsus',
-		description:
-			'An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.',
-		img: AppsusImgSrc,
-		url: 'https://appsus-afik-yoav.netlify.app/#/',
-		id: 3,
-	},
 	{
 		name: 'Typester',
 		description:
@@ -43,6 +34,23 @@ const projects = [
 		url: 'https://typester.onrender.com/',
 		id: 4,
 	},
+	{
+		name: 'Aviv Zafrir  Makeup Artist',
+		description:
+			'A responsive makeup artist portfolio website, elegant design, and fast reload time',
+		img: MakeupArtistImgSrc,
+		url: 'https://aviv-zafrir-portofollio.vercel.app/',
+		id: 7,
+	},
+	{
+		name: 'Appsus',
+		description:
+			'An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.',
+		img: AppsusImgSrc,
+		url: 'https://appsus-afik-yoav.netlify.app/#/',
+		id: 3,
+	},
+
 	{
 		name: 'Choose your framework',
 		description:
@@ -60,14 +68,7 @@ const projects = [
 		url: 'https://meme-generator-ac.netlify.app/',
 		id: 6,
 	},
-	{
-		name: 'Aviv Zafrir  Makeup Artist',
-		description:
-			'A responsive makeup artist portfolio website, elegant design, and fast reload time',
-		img: MakeupArtistImgSrc,
-		url: 'https://aviv-zafrir-portofollio.vercel.app/',
-		id: 7,
-	},
+
 	{
 		name: 'More...',
 		description: 'Check out more Projects on GitHub',

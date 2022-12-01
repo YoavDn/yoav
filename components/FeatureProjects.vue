@@ -32,15 +32,15 @@ const projects = [
 			'Typester is a modern design typing test application inspired by Monkeytype.It features a variety of test modes, including a dark mode for the night owls, and also saves user typing tests history.',
 		img: TypesterImgSrc,
 		url: 'https://typester.onrender.com/',
-		id: 4,
+		id: 3,
 	},
 	{
 		name: 'Aviv Zafrir  Makeup Artist',
 		description:
 			'A responsive makeup artist portfolio website, elegant design, and fast reload time',
 		img: MakeupArtistImgSrc,
-		url: 'https://aviv-zafrir-portofollio.vercel.app/',
-		id: 7,
+		url: 'https://avivzafrir.com',
+		id: 4,
 	},
 	{
 		name: 'Appsus',
@@ -48,7 +48,7 @@ const projects = [
 			'An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.',
 		img: AppsusImgSrc,
 		url: 'https://appsus-afik-yoav.netlify.app/#/',
-		id: 3,
+		id: 5,
 	},
 
 	{
@@ -57,7 +57,7 @@ const projects = [
 			'A cute little helper game I made for choosing a Javascript UI framework.',
 		img: ChooseYourFrameworkImgSrc,
 		url: 'https://choose-your-framework.vercel.app/',
-		id: 5,
+		id: 6,
 	},
 
 	{
@@ -66,7 +66,7 @@ const projects = [
 			'A meme-maker app where you can make your meme, download, share, and save it.',
 		img: MemeGenImgSrc,
 		url: 'https://meme-generator-ac.netlify.app/',
-		id: 6,
+		id: 7,
 	},
 
 	{

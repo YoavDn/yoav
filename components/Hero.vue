@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script  setup lang="ts">
 import DoodleLineSvg1 from '~~/assets/imgs/doodle-line1.svg'
 import DoodleLineSvg2 from '~~/assets/imgs/doodle-line2.svg'
 import DoodleLineSvg3 from '~~/assets/imgs/doodle-line3.svg'
@@ -6,8 +6,8 @@ import DoodleLineSvg4 from '~~/assets/imgs/doodle-line4.svg'
 import DoodleLineSvg5 from '~~/assets/imgs/doodle-line5.svg'
 import GithubSvg from '~~/assets/imgs/github.svg'
 import LinkedinSvg from '~~/assets/imgs/linkedin.svg'
-import CanvasParty from '@canvas-party/vue'
-import { ShallowRef } from 'vue'
+
+import { shallowRef, onMounted } from 'vue'
 
 const showTvLinks = ref<Boolean>(false)
 const mounted = ref(false)
@@ -18,6 +18,7 @@ const canvasPartyOptions = {
 }
 
 onMounted(() => {
+	console.log('fhakdjkdsfa')
 	import('@canvas-party/vue').then(module => {
 		dynamicComponent.value = module.default
 		console.log(dynamicComponent.value)

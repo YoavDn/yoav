@@ -12,7 +12,7 @@
     "@tailwindcss/typography": "^0.5.7",
     "@volar-plugins/prettier": "^1.1.4",
     "autoprefixer": "^10.4.11",
-    "nuxt": "^3.0.0-rc.11",
+    "nuxt": "^3.0.0",
     "postcss": "^8.4.16",
     "sass": "^1.54.9",
     "tailwindcss": "^3.1.8"

@@ -43,12 +43,20 @@ const projects = [
 		id: 4,
 	},
 	{
+		name: 'Soap celebs API',
+		description: 'No comment..',
+		img: 'https://res.cloudinary.com/soap-celebs/image/upload/v1667481618/ygeduphia6cqasyqxpuc.png',
+		url: 'https://soap-celebs-api.vercel.app',
+		id: 5,
+	},
+
+	{
 		name: 'Appsus',
 		description:
 			'An app based on Google Keep, Gmail, and also contains a Book Library app, with the use of the Google Books API.',
 		img: AppsusImgSrc,
 		url: 'https://appsus-afik-yoav.netlify.app/#/',
-		id: 5,
+		id: 6,
 	},
 
 	{
@@ -57,7 +65,7 @@ const projects = [
 			'A cute little helper game I made for choosing a Javascript UI framework.',
 		img: ChooseYourFrameworkImgSrc,
 		url: 'https://choose-your-framework.vercel.app/',
-		id: 6,
+		id: 7,
 	},
 
 	{
@@ -66,7 +74,7 @@ const projects = [
 			'A meme-maker app where you can make your meme, download, share, and save it.',
 		img: MemeGenImgSrc,
 		url: 'https://meme-generator-ac.netlify.app/',
-		id: 7,
+		id: 8,
 	},
 
 	{
@@ -74,7 +82,7 @@ const projects = [
 		description: 'Check out more Projects on GitHub',
 		img: '',
 		url: 'https://github.com/YoavDn',
-		id: 8,
+		id: 9,
 	},
 ]
 </script>

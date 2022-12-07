@@ -7,7 +7,6 @@ import CanvasPartySrc from '~~/assets/imgs/canvasParty.png'
 import ChooseYourFrameworkImgSrc from '~~/assets/imgs/cyf.png'
 import MemeGenImgSrc from '~~/assets/imgs/meme-gen.png'
 import MakeupArtistImgSrc from '~~/assets/imgs/v-makeup-artist.png'
-console.log('hi')
 
 const projects = [
 	{

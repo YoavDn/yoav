@@ -24,7 +24,6 @@ function isLightBg(name: string) {
 }
 
 function showContent(e: Event) {
-	console.log(window.innerWidth)
 	if (window.innerWidth <= 570) {
 		e.stopPropagation()
 	}

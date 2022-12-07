@@ -20,7 +20,6 @@ const canvasPartyOptions = {
 onMounted(() => {
 	import('@canvas-party/vue').then(module => {
 		dynamicComponent.value = module.default
-		console.log(dynamicComponent.value)
 	})
 })
 </script>

@@ -16,14 +16,8 @@ module.exports  = {
     `./nuxt.config.{js,ts}`,
   ],
   theme: {
-    // spacing: {
-      //   '128': '32rem',
-      //   '144': '36rem',
-      //   },
       extend: {
       fontFamily: {
-        // nanum: ["Nanum Brush Scåript", "cursive"],
-        // inter: ["Inter", "sans-serif"],
         nanum: ["Nanum Brush Script", "cursive"],
         sans: ["Inter", "sans-serif"],
         serif: ["Ariel","serif"],
@@ -61,7 +55,6 @@ module.exports  = {
   },
    plugins: [
     require('@tailwindcss/typography'),
-    // ...
   ],
 }
 

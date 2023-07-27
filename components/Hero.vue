@@ -18,6 +18,7 @@ const canvasPartyOptions = {
 }
 
 onMounted(() => {
+	//@ts-ignore
 	import('@canvas-party/vue').then(module => {
 		dynamicComponent.value = module.default
 	})
@@ -38,9 +39,11 @@ onMounted(() => {
 		<div class="hero-title">
 			<h2>
 				Hello, I'm
-				<span class="text-primary bold"> Yoav </span>
+				<span class="text-primary bold">Yoav</span>
 				<br />
-				web developer.
+				<span class="text-7xl">
+					Software Developer
+				</span>
 			</h2>
 		</div>
 		<div
@@ -151,7 +154,7 @@ onMounted(() => {
 }
 
 .hero-title {
-	@apply py-0 mx-auto w-full z-10;
+	@apply py-0 mx-auto w-full z-10 flex flex-col gap-4;
 	@apply text-xl max-w-full;
 
 	h2 {

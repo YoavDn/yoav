@@ -18,10 +18,6 @@ function toggleMenu() {
             <a href="#about"> ABOUT </a>
           </li>
           <li class="nav-link">
-            <!-- <nuxt-link to="/#projects"> PROJECTS </nuxt-link> -->
-            <a href="#projects"> PROJECTS </a>
-          </li>
-          <li class="nav-link">
             <!-- <nuxt-link to="/"> CONTACT </nuxt-link> -->
             <a href="#contact"> CONTACT </a>
           </li>

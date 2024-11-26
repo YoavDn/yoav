@@ -1,4 +1,5 @@
 <template>
+
 	<main>
 		<slot />
 	</main>

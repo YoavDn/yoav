@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useShownOnScroll } from '~~/features/useShownOnScroll'
-
 import { onMounted } from 'vue'
 
 onMounted(() => {

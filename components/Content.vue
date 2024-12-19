@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="prose lg:prose-lg dark:prose-invert m-auto">
+  <main class="prose lg:prose-lg prose-invert m-auto">
     <section class="about content" id="about">
       <h2 class="scroll-hidden">About me.</h2>
       <p class="scroll-hidden">

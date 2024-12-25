@@ -14,7 +14,7 @@ onMounted(() => {
       <h2 class="scroll-hidden">About me.</h2>
       <p class="scroll-hidden">
         Hi! I'm Yoav Mendelson, a software developer currently working at
-        <a href="https://www.silverfort.com/">Silverfort</a>, which was previously known as <a href="https://www.rezonate.io/">Rezonate</a>. <br />
+        <a href="https://www.rezonate.io/">Rezonate</a>, which was recently acquired by <a href="https://www.silverfort.com/">Silverfort</a>. <br />
         I started Coding out of pure curiosity, it became a hobby and after a
         while I decided to take the next step and go for it do it full time.
       </p>

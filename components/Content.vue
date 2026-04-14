@@ -9,7 +9,7 @@ const { registerElement } = useRevealOnScroll()
       <p class="scroll-hidden" :ref="registerElement">
         I'm Yoav Mendelson. I enjoy building products and solutions.
         Currently building
-        <NuxtLink to="https://postpeer.dev" external target="_blank" rel="noreferrer">PostPeer</NuxtLink>.
+        <NuxtLink to="https://postpeer.dev" external target="_blank" rel="noopener">PostPeer</NuxtLink>.
       </p>
 
       <p class="scroll-hidden" :ref="registerElement">

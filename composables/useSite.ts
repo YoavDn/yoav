@@ -1,8 +1,8 @@
 const site = {
   name: 'Yoav Mendelson',
-  title: 'Yoav Mendelson | Web Developer',
+  title: 'Yoav Mendelson | I Build Things',
   description:
-    'A web developer based in Haifa, Israel. Passionate about building beautiful websites and libraries.',
+    'I build products and solutions. Currently building postpeer.dev.',
   url: 'https://yoav.vercel.app',
   email: 'yoavdan.m@gmail.com',
   social: {

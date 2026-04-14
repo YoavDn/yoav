@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import DoodleLineSvg1 from '~~/assets/imgs/doodle-line1.svg'
-import DoodleLineSvg2 from '~~/assets/imgs/doodle-line2.svg'
-import DoodleLineSvg3 from '~~/assets/imgs/doodle-line3.svg'
-import DoodleLineSvg4 from '~~/assets/imgs/doodle-line4.svg'
-import DoodleLineSvg5 from '~~/assets/imgs/doodle-line5.svg'
-import GithubSvg from '~~/assets/imgs/github.svg'
-import HeroImg from '~~/assets/imgs/hero-img.png'
-import LinkedinSvg from '~~/assets/imgs/linkedin.svg'
-import DownArrowSvg from '~~/assets/imgs/down-arrow.svg'
-import TvNoiseGif from '~~/assets/imgs/tv-noise.gif'
+import DoodleLineSvg1 from '~/assets/imgs/doodle-line1.svg'
+import DoodleLineSvg2 from '~/assets/imgs/doodle-line2.svg'
+import DoodleLineSvg3 from '~/assets/imgs/doodle-line3.svg'
+import DoodleLineSvg4 from '~/assets/imgs/doodle-line4.svg'
+import DoodleLineSvg5 from '~/assets/imgs/doodle-line5.svg'
+import GithubSvg from '~/assets/imgs/github.svg'
+import HeroImg from '~/assets/imgs/hero-img.png'
+import LinkedinSvg from '~/assets/imgs/linkedin.svg'
+import DownArrowSvg from '~/assets/imgs/down-arrow.svg'
+import TvNoiseGif from '~/assets/imgs/tv-noise.gif'
 
 const showTvLinks = ref(false)
 const site = useSite()
@@ -22,9 +22,9 @@ const site = useSite()
       <div class="hero-title">
         <h1>
           Hello, I'm
-          <span class="text-primary bold">Yoav</span>
+          <span class="text-primary font-bold">Yoav</span>
           <br />
-          <span class="text-7xl">Software Developer</span>
+          <span class="text-7xl">I Build Things</span>
         </h1>
       </div>
 
@@ -65,8 +65,8 @@ const site = useSite()
       </div>
     </div>
 
-    <div class="scroll-btn flex-col items-center justify-center">
-      <div class="doodles flex justify-between">
+    <div class="scroll-btn flex flex-col items-center justify-center">
+      <div class="doodles flex justify-between gap-3">
         <img class="doodle-line line-5" :src="DoodleLineSvg5" alt="" />
         <img class="doodle-line line-4" :src="DoodleLineSvg4" alt="" />
         <img class="doodle-line line-3" :src="DoodleLineSvg3" alt="" />
@@ -79,7 +79,7 @@ const site = useSite()
   </section>
 </template>
 
-<style lang="scss">
+<style scoped>
 @reference "../assets/styles/tailwind-ref.css";
 
 .hero-section {
@@ -87,11 +87,10 @@ const site = useSite()
 }
 
 .scroll-btn {
-  cursor: pointer;
-  @apply absolute bottom-4 w-32 left-1/2 text-4xl -translate-x-1/2;
+  @apply absolute bottom-4 left-1/2 w-32 -translate-x-1/2 cursor-pointer text-4xl;
 
   h2 {
-    @apply font-nanum text-center;
+    @apply text-center font-nanum;
 
     &:hover {
       @apply text-primary;
@@ -128,7 +127,7 @@ const site = useSite()
   }
 
   .scroll-arrow {
-    @apply block mx-auto;
+    @apply mx-auto block;
   }
 }
 
@@ -137,11 +136,10 @@ const site = useSite()
 }
 
 .hero-title {
-  @apply z-10 mx-auto flex w-full max-w-full flex-col gap-4 py-0 text-xl;
+  @apply z-10 mx-auto flex w-full max-w-full flex-col gap-4 text-xl;
 
   h1 {
-    font-family: 'Nanum Brush Script';
-    @apply mb-5 text-center text-[4.3rem] leading-none sm:text-5xl md:text-7xl lg:text-8xl;
+    @apply mb-5 text-center font-nanum text-[4.3rem] leading-none sm:text-5xl md:text-7xl lg:text-8xl;
   }
 }
 
@@ -160,35 +158,12 @@ const site = useSite()
     @apply absolute left-[10%] top-[27%] h-20 w-[100px] rotate-2 border-[0.3px] border-white bg-black text-base font-bold md:right-[48%] md:h-20 md:w-[114px];
 
     li {
-      @apply mx-3 text-end text-primary;
-      cursor: pointer;
+      @apply mx-3 cursor-pointer text-end text-primary;
 
       img {
-        @apply inline w-4 text-end;
+        @apply inline w-4;
       }
     }
   }
-}
-
-@keyframes grow {
-	0% {
-		scale: 1;
-	}
-
-	100% {
-		scale: 1.01;
-	}
-}
-
-@keyframes doodle {
-	0% {
-		transform: rotate(0);
-		scale: 1;
-	}
-
-	100% {
-		transform: rotate(43deg);
-		scale: 1.01;
-	}
 }
 </style>

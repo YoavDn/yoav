@@ -3,7 +3,7 @@ import CanvasParty from '@canvas-party/vue'
 
 const options = {
   colors: ['#A3E635', '#6A9523'],
-  count: 81,
+  count: 381,
 }
 </script>
 

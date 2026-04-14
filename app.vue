@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const site = useSite()
-const ogImage = `${site.url}/mysite.png`
+const ogImage = `${site.url}/og-mysite.jpg`
 
 useHead({
   htmlAttrs: {
@@ -12,12 +12,17 @@ useHead({
       href: '/favicon.ico',
     },
   ],
+  meta: [
+    { property: 'og:see_also', content: site.social.github },
+    { property: 'og:see_also', content: site.social.linkedin },
+    { property: 'og:see_also', content: site.social.x },
+  ],
 })
 
 useSeoMeta({
   title: site.title,
   description: site.description,
-  keywords: 'Yoav Mendelson, Web Dev, UX/UI, software developer, design',
+  keywords: 'Yoav Mendelson, builder, products, postpeer, software, developer',
   ogTitle: site.title,
   ogDescription: site.description,
   ogUrl: site.url,

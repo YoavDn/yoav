@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LinkSvg from '~~/assets/imgs/link.svg'
+import LinkSvg from '~/assets/imgs/link.svg'
 import ArrowSvg from '~/assets/imgs/down-arrow.svg'
 
 const currYear = new Date().getFullYear()
@@ -36,24 +36,23 @@ const site = useSite()
       <NuxtLink to="/#top">Back to top</NuxtLink>
     </div>
 
-    <h3 class="mt-10 w-full text-left text-base font-normal">
+    <h3 class="mt-10 w-full text-center text-base font-normal">
       &copy;{{ currYear }} Yoav Mendelson
     </h3>
   </footer>
- </template>
+</template>
 
-<style scoped lang="scss">
+<style scoped>
 @reference "../assets/styles/tailwind-ref.css";
 .footer {
-  @apply mx-auto flex w-full max-w-[85ch] flex-col items-start px-4 py-6;
+  @apply mx-auto flex w-full max-w-[85ch] flex-col items-center px-4 py-6;
 
   h2 {
-    @apply mb-16 text-left;
+    @apply mb-16 text-center;
   }
 
   .links {
-    @apply mt-2 grid grid-cols-1 gap-4 text-left text-lg text-primary md:grid-cols-2 md:gap-x-12 md:gap-y-4;
-    width: fit-content;
+    @apply mt-2 grid grid-cols-2 gap-4 text-center text-lg text-primary md:grid-cols-4 md:gap-x-12;
 
     li {
       @apply text-xl;

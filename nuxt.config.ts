@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  css: ['@/assets/styles/tailwind.css', '@/assets/styles/global.scss'],
+  css: ['@/assets/styles/tailwind.css', '@/assets/styles/global.css'],
   vite: {
     optimizeDeps: {
       include: [

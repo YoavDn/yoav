@@ -72,9 +72,12 @@ function closeMenu() {
   </header>
 </template>
 
-<style lang="scss">
+<style>
 @reference "../assets/styles/tailwind-ref.css";
+
 .navbar {
+  @apply fixed top-0 left-0 z-50 flex w-full flex-col gap-[30px] bg-black/50 py-4 backdrop-blur-md;
+
   .fade-enter-active,
   .fade-leave-active {
     transform: translateY(0%);
@@ -86,26 +89,20 @@ function closeMenu() {
     transform: translateY(-100%);
     opacity: 0;
   }
-  @apply fixed top-0 left-0 w-full py-4;
-  @apply z-50;
-  @apply flex-col;
-  gap: 30px;
-  @apply bg-black/50 backdrop-blur-md;
 
   .nav-container {
     @apply flex h-full w-full items-center justify-between;
   }
 
   .logo {
-    font-family: 'Nanum Brush Script';
-    @apply text-xl text-black bg-lime-400 p-1;
+    @apply bg-lime-400 p-1 font-nanum text-xl text-black;
   }
 
   .links {
     @apply gap-2;
 
     li {
-      @apply text-primary px-4 py-2 rounded-md;
+      @apply rounded-md px-4 py-2 text-primary;
 
       &:hover {
         @apply bg-lime-300/25;
@@ -113,17 +110,17 @@ function closeMenu() {
     }
 
     button {
-      cursor: pointer;
+      @apply cursor-pointer;
     }
   }
 
   .nav-links {
-    @apply sm:flex gap-4 px-2;
+    @apply gap-4 px-2 sm:flex;
 
     .nav-link {
-      @apply sm:flex transition-colors duration-300 hidden;
-      font-weight: 600;
+      @apply hidden font-semibold transition-colors duration-300 sm:flex;
     }
+
     .menu-link {
       @apply sm:hidden;
     }
@@ -131,16 +128,17 @@ function closeMenu() {
 
   .svg-links {
     @apply gap-2;
+
     li {
-      @apply bg-lime-300/10;
-      @apply transition-colors;
+      @apply bg-lime-300/10 transition-colors;
 
       &.linkedin-svg {
         @apply hidden sm:flex;
       }
     }
+
     .svg-link {
-      @apply fill-lime-300 h-6 w-6;
+      @apply h-6 w-6 fill-lime-300;
     }
   }
 }

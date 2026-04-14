@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --no-fork",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -14,7 +14,6 @@
     "autoprefixer": "^10.5.0",
     "nuxt": "^4.4.2",
     "postcss": "^8.5.9",
-    "sass": "^1.99.0",
     "tailwindcss": "^4.2.2"
   },
   "dependencies": {

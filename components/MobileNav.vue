@@ -33,7 +33,7 @@ const site = useSite()
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 @reference "../assets/styles/tailwind-ref.css";
 .mobile-menu {
   @apply mt-5;

@@ -1,5 +1,3 @@
-@reference "./tailwind-ref.css";
-
 html,
 body {
   @apply bg-black text-white;
@@ -7,9 +5,3 @@ body {
   @apply scroll-p-24;
   width: 100%;
 }
-
-// @layer base {
-//   html {
-//     font-family: Inter, system-ui, sans-serif;
-//   }
-// }

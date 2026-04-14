@@ -3,57 +3,64 @@ import LinkSvg from '~~/assets/imgs/link.svg'
 import ArrowSvg from '~/assets/imgs/down-arrow.svg'
 
 const currYear = new Date().getFullYear()
+const site = useSite()
 </script>
 
 <template>
-  <div class="footer content" id="contact">
+  <footer class="footer" id="contact">
     <h2>Contact.</h2>
-    <div class="links">
+    <ul class="links">
       <li>
-        <a href="https://www.linkedin.com/in/yoav-mendelson/">
+        <NuxtLink :to="site.social.linkedin" external target="_blank" rel="noreferrer">
           LinkedIn <img :src="LinkSvg" alt="" />
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a href="https://github.com/YoavDn">
-          Github <img :src="LinkSvg" alt="" />
-        </a>
+        <NuxtLink :to="site.social.github" external target="_blank" rel="noreferrer">
+          GitHub <img :src="LinkSvg" alt="" />
+        </NuxtLink>
       </li>
       <li>
-        <a href="https://twitter.com/yoav_mendelson">
+        <NuxtLink :to="site.social.x" external target="_blank" rel="noreferrer">
           Twitter <img :src="LinkSvg" alt="" />
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a href="mailto:yoavdan.m@gmail.com">
+        <NuxtLink :to="`mailto:${site.email}`" external>
           Email <img :src="LinkSvg" alt="" />
-        </a>
+        </NuxtLink>
       </li>
-    </div>
+    </ul>
     <div class="back-to-top">
-      <img :src="ArrowSvg" alt="arrow svg" />
-      <a href="#"> Back to top </a>
+      <img :src="ArrowSvg" alt="Arrow pointing up" />
+      <NuxtLink to="/#top">Back to top</NuxtLink>
     </div>
 
-    <h3 class="text-base font-400 text-center mt-10">
+    <h3 class="mt-10 w-full text-left text-base font-normal">
       &copy;{{ currYear }} Yoav Mendelson
     </h3>
-  </div>
-</template>
+  </footer>
+ </template>
 
 <style scoped lang="scss">
+@reference "../assets/styles/tailwind-ref.css";
 .footer {
+  @apply mx-auto flex w-full max-w-[85ch] flex-col items-start px-4 py-6;
+
   h2 {
-    @apply mb-20;
-    text-align: center;
+    @apply mb-16 text-left;
   }
 
   .links {
-    @apply grid grid-cols-2 md:grid-cols-4 gap-16 justify-items-center;
-    @apply w-full text-lg text-primary;
+    @apply mt-2 grid grid-cols-1 gap-4 text-left text-lg text-primary md:grid-cols-2 md:gap-x-12 md:gap-y-4;
+    width: fit-content;
 
     li {
       @apply text-xl;
+
+      a {
+        @apply inline-flex items-center gap-2;
+      }
 
       &:hover {
         @apply underline-offset-4 decoration-wavy underline;
@@ -67,12 +74,10 @@ const currYear = new Date().getFullYear()
 }
 
 .back-to-top {
-  @apply font-nanum m-auto  text-center mt-24;
+  @apply mt-24 inline-flex w-full flex-col items-center gap-2 text-center font-nanum;
 
   a {
-    @apply text-4xl;
-    // margin: auto;
-    // display: block;
+    @apply block text-4xl;
 
     &:hover {
       @apply text-primary;
@@ -80,7 +85,7 @@ const currYear = new Date().getFullYear()
   }
 
   img {
-    @apply rotate-180 mx-auto;
+    @apply block h-6 w-auto rotate-180;
   }
 }
 </style>

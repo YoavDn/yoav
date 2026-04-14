@@ -1,12 +1,6 @@
-@import './reset.scss';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-@import './base.scss';
-@import './fonts.scss';
-@import './vars.scss';
-@import './helpers.scss';
-@import './layout.scss';
+@use './reset';
+@use './base';
+@use './fonts';
+@use './vars';
+@use './helpers';
+@use './layout';

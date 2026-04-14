@@ -1,39 +1,38 @@
 <script setup lang="ts">
-import Navbar from '~~/components/Navbar.vue'
-import Footer from '~~/components/Footer.vue'
+const site = useSite()
+const ogImage = `${site.url}/mysite.png`
 
 useHead({
-  title: 'Yoav Mendelson | Web Developer',
-  meta: [
+  htmlAttrs: {
+    lang: 'en',
+  },
+  link: [
     {
-      name: 'description',
-      content:
-        'A web Developer based in Haifa, Israel. Passionate about building beautiful websites and libraries.',
+      rel: 'icon',
+      href: '/favicon.ico',
     },
-    {
-      hid: 'keywords',
-      name: 'keywords',
-      content:
-        'Yoav Mendelson, Web Dev, UX/UI, software developer, design'.split(','),
-    },
-    { name: 'og:title', content: 'Yoav Mendelson | Web Developer' },
-    {
-      name: 'og:description',
-      content:
-        'A web Developer based in Haifa, Israel. Passionate about building beautiful websites and libraries.',
-    },
-    { name: 'og:orl', content: 'https://yoav.vercel.app' },
-    { name: 'og:image', content: '~~/assets/imgs/mysite.png' },
   ],
+})
+
+useSeoMeta({
+  title: site.title,
+  description: site.description,
+  keywords: 'Yoav Mendelson, Web Dev, UX/UI, software developer, design',
+  ogTitle: site.title,
+  ogDescription: site.description,
+  ogUrl: site.url,
+  ogImage,
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: site.title,
+  twitterDescription: site.description,
+  twitterImage: ogImage,
 })
 </script>
 
 <template>
+  <NuxtLoadingIndicator color="rgb(163 230 53)" :height="3" />
   <NuxtLayout>
-    <Navbar />
     <NuxtPage />
-    <Footer />
   </NuxtLayout>
 </template>
-
-<style lang="scss"></style>

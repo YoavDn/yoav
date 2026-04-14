@@ -1,64 +1,79 @@
 <script setup lang="ts">
-import MobileNav from './MobileNav.vue'
+import GithubSvg from '~/assets/imgs/github.svg'
+import LinkedinSvg from '~/assets/imgs/linkedin.svg'
+
 const isMenuOpen = ref(false)
+const site = useSite()
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+function closeMenu() {
+  isMenuOpen.value = false
+}
 </script>
 
 <template>
-  <div class="navbar">
-    <div class="container">
-      <div class="logo"><a href="#"> Y.M </a></div>
+  <header class="navbar">
+    <div class="page-shell nav-container">
+      <NuxtLink class="logo" to="/#top" @click="closeMenu">Y.M</NuxtLink>
+
       <div class="links flex items-center">
-        <div class="nav-links">
+        <ul class="nav-links">
           <li class="nav-link">
-            <!-- <nuxt-link to="/#about"> ABOUT </nuxt-link> -->
-            <a href="#about"> ABOUT </a>
+            <NuxtLink to="/#about" @click="closeMenu">ABOUT</NuxtLink>
           </li>
           <li class="nav-link">
-            <!-- <nuxt-link to="/"> CONTACT </nuxt-link> -->
-            <a href="#contact"> CONTACT </a>
+            <NuxtLink to="/#contact" @click="closeMenu">CONTACT</NuxtLink>
           </li>
-          <li
-            @click="toggleMenu"
-            class="menu-link underline-offset-4"
-            :class="{ underline: isMenuOpen }"
-          >
-            MENU &bull;
+          <li class="menu-link">
+            <button
+              type="button"
+              class="underline-offset-4"
+              :class="{ underline: isMenuOpen }"
+              @click="toggleMenu"
+            >
+              MENU &bull;
+            </button>
           </li>
-        </div>
-        <div class="svg-links flex">
+        </ul>
+
+        <ul class="svg-links flex">
           <li>
-            <a
-              href="https://github.com/YoavDn"
+            <NuxtLink
+              :to="site.social.github"
+              external
               target="_blank"
+              rel="noreferrer"
               class="svg-link"
             >
-              <img src="~/assets/imgs/github.svg" alt="github-svg" />
-            </a>
+              <img :src="GithubSvg" alt="GitHub" />
+            </NuxtLink>
           </li>
-
           <li class="linkedin-svg">
-            <a
-              href="https://www.linkedin.com/in/yoav-mendelson/"
+            <NuxtLink
+              :to="site.social.linkedin"
+              external
               target="_blank"
+              rel="noreferrer"
               class="svg-link linkedin-svg"
             >
-              <img src="~/assets/imgs/linkedin.svg" alt="linkedin-svg" />
-            </a>
+              <img :src="LinkedinSvg" alt="LinkedIn" />
+            </NuxtLink>
           </li>
-        </div>
+        </ul>
       </div>
     </div>
+
     <Transition name="fade">
-      <MobileNav v-if="isMenuOpen" />
+      <MobileNav v-if="isMenuOpen" @navigate="closeMenu" />
     </Transition>
-  </div>
+  </header>
 </template>
 
 <style lang="scss">
+@reference "../assets/styles/tailwind-ref.css";
 .navbar {
   .fade-enter-active,
   .fade-leave-active {
@@ -75,11 +90,10 @@ function toggleMenu() {
   @apply z-50;
   @apply flex-col;
   gap: 30px;
-  @apply bg-opacity-50 backdrop-blur-md;
+  @apply bg-black/50 backdrop-blur-md;
 
-  .container {
-    @apply w-full h-full max-w-screen-xl m-auto;
-    @apply flex justify-between items-center px-5;
+  .nav-container {
+    @apply flex h-full w-full items-center justify-between;
   }
 
   .logo {
@@ -88,13 +102,18 @@ function toggleMenu() {
   }
 
   .links {
+    @apply gap-2;
+
     li {
-      cursor: pointer;
       @apply text-primary px-4 py-2 rounded-md;
 
       &:hover {
-        @apply bg-opacity-25 bg-lime-300;
+        @apply bg-lime-300/25;
       }
+    }
+
+    button {
+      cursor: pointer;
     }
   }
 
@@ -113,7 +132,7 @@ function toggleMenu() {
   .svg-links {
     @apply gap-2;
     li {
-      @apply bg-opacity-10 bg-lime-300;
+      @apply bg-lime-300/10;
       @apply transition-colors;
 
       &.linkedin-svg {

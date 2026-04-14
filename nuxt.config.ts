@@ -1,15 +1,25 @@
-import { title } from 'process'
+import { defineNuxtConfig } from 'nuxt/config'
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    plugins: [{ src: '~/plugins/vercel.js', mode: 'client' }],
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-        },
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {},
+      autoprefixer: {},
     },
-    css: ['@/assets/styles/global.scss'],
-
-
+  },
+  css: ['@/assets/styles/tailwind.css', '@/assets/styles/global.scss'],
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        '@vercel/analytics',
+        '@canvas-party/vue',
+      ],
+    },
+  },
+  experimental: {
+    serverAppConfig: false,
+  },
+  compatibilityDate: '2025-07-15',
 })

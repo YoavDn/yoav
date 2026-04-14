@@ -1,48 +1,55 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LinkedinSvg from '~/assets/imgs/linkedin.svg'
+
+const emit = defineEmits<{
+  navigate: []
+}>()
+
+const site = useSite()
+</script>
 
 <template>
   <div class="mobile-menu">
-    <ul class="flex gap-8 px-5">
+    <ul class="page-shell">
       <li>
-        <a href="#about">ABOUT</a>
+        <NuxtLink to="/#about" @click="emit('navigate')">ABOUT</NuxtLink>
       </li>
       <li>
-        <a href="#projects">PROJECTS</a>
+        <NuxtLink to="/#contact" @click="emit('navigate')">CONTACT</NuxtLink>
       </li>
-      <li>
-        <a href="#contact">CONTACT</a>
-      </li>
-      <div class="divider"></div>
+      <li class="divider" aria-hidden="true"></li>
       <li class="linkedin-svg">
-        <a
-          href="https://www.linkedin.com/in/yoav-mendelson/"
+        <NuxtLink
+          :to="site.social.linkedin"
+          external
           target="_blank"
+          rel="noreferrer"
           class="svg-link linkedin-svg"
         >
-          <img src="~/assets/imgs/linkedin.svg" alt="linkedin-svg" />
-        </a>
+          <img :src="LinkedinSvg" alt="LinkedIn" />
+        </NuxtLink>
       </li>
     </ul>
   </div>
 </template>
 
 <style scoped lang="scss">
+@reference "../assets/styles/tailwind-ref.css";
 .mobile-menu {
   @apply mt-5;
 
   ul {
-    @apply font-bold py-3;
+    @apply flex items-center gap-8 py-3 font-bold;
+
     .divider {
-      width: 1px;
-      height: auto;
-      @apply bg-primary bg-opacity-50 rounded-md;
+      @apply h-6 w-px rounded-md bg-primary/50;
     }
 
     li {
       @apply text-primary;
 
-      &.likedin-svg {
-        background-color: red;
+      &.linkedin-svg {
+        @apply ml-auto;
       }
     }
   }

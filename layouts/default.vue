@@ -1,6 +1,9 @@
 <template>
-
-	<main>
-		<slot />
-	</main>
+  <div id="top">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </div>
 </template>

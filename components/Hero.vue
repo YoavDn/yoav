@@ -1,196 +1,173 @@
-<script  setup lang="ts">
+<script setup lang="ts">
 import DoodleLineSvg1 from '~~/assets/imgs/doodle-line1.svg'
 import DoodleLineSvg2 from '~~/assets/imgs/doodle-line2.svg'
 import DoodleLineSvg3 from '~~/assets/imgs/doodle-line3.svg'
 import DoodleLineSvg4 from '~~/assets/imgs/doodle-line4.svg'
 import DoodleLineSvg5 from '~~/assets/imgs/doodle-line5.svg'
 import GithubSvg from '~~/assets/imgs/github.svg'
+import HeroImg from '~~/assets/imgs/hero-img.png'
 import LinkedinSvg from '~~/assets/imgs/linkedin.svg'
+import DownArrowSvg from '~~/assets/imgs/down-arrow.svg'
+import TvNoiseGif from '~~/assets/imgs/tv-noise.gif'
 
-import { shallowRef, onMounted } from 'vue'
-
-const showTvLinks = ref<Boolean>(false)
-const mounted = ref(false)
-const dynamicComponent = shallowRef(null)
-const canvasPartyOptions = {
-	colors: ['#A3E635', '#6A9523'],
-	count: 81,
-}
-
-onMounted(() => {
-	//@ts-ignore
-	import('@canvas-party/vue').then(module => {
-		dynamicComponent.value = module.default
-	})
-})
+const showTvLinks = ref(false)
+const site = useSite()
 </script>
 
 <template>
-	<component
-		class="canvas-party"
-		v-if="dynamicComponent"
-		:is="dynamicComponent"
-		:type="'confetti'"
-		:options="canvasPartyOptions"
-	>
-	</component>
+  <section class="hero-section">
+    <LazyHeroConfetti />
 
-	<div class="hero">
-		<div class="hero-title">
-			<h2>
-				Hello, I'm
-				<span class="text-primary bold">Yoav</span>
-				<br />
-				<span class="text-7xl">
-					Software Developer
-				</span>
-			</h2>
-		</div>
-		<div
-			class="hero-svg"
-			@mouseover="() => (showTvLinks = true)"
-			@mouseleave="() => (showTvLinks = false)"
-		>
-			<img
-				class="hero-img"
-				src="~~/assets/imgs/hero-img.png"
-				alt="hero-img"
-			/>
-			<img
-				v-if="!showTvLinks"
-				class="hero-img-tv"
-				src="~~/assets/imgs/tv-noise.gif"
-				alt="tv-noise-bg"
-			/>
-			<ul v-if="showTvLinks" class="tv-links">
-				<li>
-					<a
-						target="_blank"
-						href="https://www.linkedin.com/in/yoav-mendelson/"
-					>
-						<img :src="LinkedinSvg" alt="gitHub Svg" />
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="https://github.com/YoavDn">
-						<img :src="GithubSvg" alt="linkedIn Svg" />
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="mailto:yoavdan.m@gmail.com"> @ </a>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="hero">
+      <div class="hero-title">
+        <h1>
+          Hello, I'm
+          <span class="text-primary bold">Yoav</span>
+          <br />
+          <span class="text-7xl">Software Developer</span>
+        </h1>
+      </div>
 
-	<div class="scroll-btn flex-col items-center justify-center">
-		<div class="doodles flex justify-between">
-			<img class="doodle-line line-5" :src="DoodleLineSvg5" alt="" />
-			<img class="doodle-line line-4" :src="DoodleLineSvg4" alt="" />
-			<img class="doodle-line line-3" :src="DoodleLineSvg3" alt="" />
-			<img class="doodle-line line-2" :src="DoodleLineSvg2" alt="" />
-			<img class="doodle-line line-1" :src="DoodleLineSvg1" alt="" />
-		</div>
-		<h2><a href="#about">Scrool </a></h2>
-		<img
-			class="m-auto"
-			src="~~/assets/imgs/down-arrow.svg"
-			alt="down-arrow"
-		/>
-	</div>
+      <div
+        class="hero-svg"
+        @mouseover="showTvLinks = true"
+        @mouseleave="showTvLinks = false"
+      >
+        <img class="hero-img" :src="HeroImg" alt="Illustrated portrait of Yoav" />
+        <img v-if="!showTvLinks" class="hero-img-tv" :src="TvNoiseGif" alt="" />
+        <ul v-else class="tv-links">
+          <li>
+            <NuxtLink
+              :to="site.social.linkedin"
+              external
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img :src="LinkedinSvg" alt="LinkedIn" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              :to="site.social.github"
+              external
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img :src="GithubSvg" alt="GitHub" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink :to="`mailto:${site.email}`" external aria-label="Email Yoav">
+              @
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scroll-btn flex-col items-center justify-center">
+      <div class="doodles flex justify-between">
+        <img class="doodle-line line-5" :src="DoodleLineSvg5" alt="" />
+        <img class="doodle-line line-4" :src="DoodleLineSvg4" alt="" />
+        <img class="doodle-line line-3" :src="DoodleLineSvg3" alt="" />
+        <img class="doodle-line line-2" :src="DoodleLineSvg2" alt="" />
+        <img class="doodle-line line-1" :src="DoodleLineSvg1" alt="" />
+      </div>
+      <h2><NuxtLink to="/#about">Scroll</NuxtLink></h2>
+      <img class="scroll-arrow" :src="DownArrowSvg" alt="Scroll down" />
+    </div>
+  </section>
 </template>
 
 <style lang="scss">
-// @import '../assets/styles/main.scss';
+@reference "../assets/styles/tailwind-ref.css";
+
+.hero-section {
+  @apply relative;
+}
 
 .scroll-btn {
-	cursor: pointer;
-	@apply absolute bottom-4 w-32 left-1/2 text-4xl -translate-x-1/2;
+  cursor: pointer;
+  @apply absolute bottom-4 w-32 left-1/2 text-4xl -translate-x-1/2;
 
-	h2 {
-		@apply font-nanum text-center;
+  h2 {
+    @apply font-nanum text-center;
 
-		&:hover {
-			@apply text-primary;
-		}
-		// font-family: "Nanum Brush Script";;
-	}
+    &:hover {
+      @apply text-primary;
+    }
+  }
 
-	.doodles {
-		.doodle-line {
-			@apply animate-bounce;
-		}
+  .doodles {
+    .doodle-line {
+      @apply animate-bounce;
+    }
 
-		.line-1 {
-			animation-delay: 0.2s;
-		}
+    .line-1 {
+      animation-delay: 0.2s;
+    }
 
-		.line-2 {
-			transform: translateY(-10px);
-			animation-delay: 0.1s;
-		}
+    .line-2 {
+      transform: translateY(-10px);
+      animation-delay: 0.1s;
+    }
 
-		.line-3 {
-			transform: translateY(-15px);
-			animation-delay: 1s;
-		}
+    .line-3 {
+      transform: translateY(-15px);
+      animation-delay: 1s;
+    }
 
-		.line-4 {
-			transform: translateY(-10px);
-			animation-delay: 0.1s;
-		}
-		.line-5 {
-			transform: translateY(0px);
-			animation-delay: 0.05s;
-		}
-	}
+    .line-4 {
+      transform: translateY(-10px);
+      animation-delay: 0.1s;
+    }
+
+    .line-5 {
+      animation-delay: 0.05s;
+    }
+  }
+
+  .scroll-arrow {
+    @apply block mx-auto;
+  }
 }
 
 .hero {
-	@apply mx-auto px-4 py-6 gap-5;
-	@apply w-full max-w-[85ch];
-	@apply w-full flex flex-col justify-center items-center;
-	@apply h-screen md:flex-row md:justify-between;
+  @apply mx-auto flex h-screen w-full max-w-[85ch] flex-col items-center justify-center gap-5 px-4 py-6 md:flex-row md:justify-between;
 }
 
 .hero-title {
-	@apply py-0 mx-auto w-full z-10 flex flex-col gap-4;
-	@apply text-xl max-w-full;
+  @apply z-10 mx-auto flex w-full max-w-full flex-col gap-4 py-0 text-xl;
 
-	h2 {
-		font-family: 'Nanum Brush Script';
-		@apply text-center;
-		@apply text-[4.3rem] leading-none sm:text-5xl md:text-7xl lg:text-8xl mb-5;
-	}
+  h1 {
+    font-family: 'Nanum Brush Script';
+    @apply mb-5 text-center text-[4.3rem] leading-none sm:text-5xl md:text-7xl lg:text-8xl;
+  }
 }
 
 .hero-svg {
-	@apply z-30 relative;
+  @apply relative z-30;
 
-	.hero-img {
-		@apply md:w-[550px] w-[290px];
-	}
+  .hero-img {
+    @apply w-[290px] md:w-[550px];
+  }
 
-	.hero-img-tv {
-		@apply w-[100px] h-20 top-[27%] left-[10%];
-		@apply absolute md:h-20 md:w-[114px] md:top-[27%] md:right-[48%] rotate-2;
-	}
+  .hero-img-tv {
+    @apply absolute left-[10%] top-[27%] h-20 w-[100px] rotate-2 md:right-[48%] md:h-20 md:w-[114px];
+  }
 
-	.tv-links {
-		@apply border-[.3px] border-white bg-black;
-		@apply text-base   font-700;
-		@apply w-[100px] h-20 top-[27%] left-[10%];
-		@apply absolute md:h-20 md:w-[114px] md:top-[27%] md:right-[48%] rotate-2;
+  .tv-links {
+    @apply absolute left-[10%] top-[27%] h-20 w-[100px] rotate-2 border-[0.3px] border-white bg-black text-base font-bold md:right-[48%] md:h-20 md:w-[114px];
 
-		li {
-			@apply mx-3 text-primary text-end;
-			cursor: pointer;
+    li {
+      @apply mx-3 text-end text-primary;
+      cursor: pointer;
 
-			img {
-				@apply w-4 inline text-end;
-			}
-		}
-	}
+      img {
+        @apply inline w-4 text-end;
+      }
+    }
+  }
 }
 
 @keyframes grow {
@@ -213,10 +190,5 @@ onMounted(() => {
 		transform: rotate(43deg);
 		scale: 1.01;
 	}
-}
-.canvas-party {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
 }
 </style>

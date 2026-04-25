@@ -3,6 +3,7 @@ const site = useSite()
 
 const { data: posts } = await useAsyncData('blog-index', () =>
   queryCollection('blog')
+    .select('path', 'title', 'description', 'date', 'readingTime')
     .where('draft', '=', false)
     .order('date', 'DESC')
     .all(),

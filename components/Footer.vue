@@ -4,6 +4,10 @@ import ArrowSvg from '~/assets/imgs/down-arrow.svg'
 
 const currYear = new Date().getFullYear()
 const site = useSite()
+
+function scrollTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -33,7 +37,7 @@ const site = useSite()
     </ul>
     <div class="back-to-top">
       <img :src="ArrowSvg" alt="Arrow pointing up" />
-      <NuxtLink to="/#top">Back to top</NuxtLink>
+      <button type="button" @click="scrollTop">Back to top</button>
     </div>
 
     <h3 class="mt-10 w-full text-center text-base font-normal">
@@ -75,8 +79,8 @@ const site = useSite()
 .back-to-top {
   @apply mt-24 inline-flex w-full flex-col items-center gap-2 text-center font-nanum;
 
-  a {
-    @apply block text-4xl;
+  button {
+    @apply block cursor-pointer bg-transparent text-4xl text-inherit;
 
     &:hover {
       @apply text-primary;

@@ -7,6 +7,7 @@ import DoodleLineSvg5 from '~/assets/imgs/doodle-line5.svg'
 import GithubSvg from '~/assets/imgs/github.svg'
 import HeroImg from '~/assets/imgs/hero-img.png'
 import LinkedinSvg from '~/assets/imgs/linkedin.svg'
+import XSvg from '~/assets/imgs/x.svg'
 import DownArrowSvg from '~/assets/imgs/down-arrow.svg'
 import TvNoiseGif from '~/assets/imgs/tv-noise.gif'
 
@@ -44,6 +45,16 @@ const site = useSite()
               rel="noreferrer"
             >
               <img :src="LinkedinSvg" alt="LinkedIn" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              :to="site.social.x"
+              external
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img :src="XSvg" alt="X" />
             </NuxtLink>
           </li>
           <li>
@@ -155,13 +166,21 @@ const site = useSite()
   }
 
   .tv-links {
-    @apply absolute left-[10%] top-[27%] h-20 w-[100px] rotate-2 border-[0.3px] border-white bg-black text-base font-bold md:right-[48%] md:h-20 md:w-[114px];
+    @apply absolute left-[10%] top-[27%] grid h-20 w-[100px] grid-cols-[auto_1fr] grid-rows-3 rotate-2 border-[0.3px] border-white bg-black text-base font-bold md:right-[48%] md:h-20 md:w-[114px];
 
     li {
-      @apply mx-3 cursor-pointer text-end text-primary;
+      @apply cursor-pointer text-primary;
 
       img {
         @apply inline w-4;
+      }
+
+      &:nth-child(-n + 3) {
+        @apply col-start-2 mx-3 text-end;
+      }
+
+      &:nth-child(4) {
+        @apply col-start-1 row-start-1 ml-2 text-start;
       }
     }
   }

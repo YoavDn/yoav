@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(yarn nuxt:*)"
+      "Bash(yarn nuxt:*)",
+      "Bash(npm install *)"
     ]
   }
 }

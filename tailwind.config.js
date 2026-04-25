@@ -14,7 +14,8 @@ module.exports = {
       fontFamily: {
         nanum: ['Nanum Brush Script', 'cursive'],
         sans: ['Inter', 'sans-serif'],
-        serif: ['Arial', 'serif'],
+        geist: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['Geist Mono', 'ui-monospace', 'monospace'],
       },
       screens: {
         '3xl': '1633px',

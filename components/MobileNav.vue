@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LinkedinSvg from '~/assets/imgs/linkedin.svg'
+import XSvg from '~/assets/imgs/x.svg'
 
 const emit = defineEmits<{
   navigate: []
@@ -15,18 +15,21 @@ const site = useSite()
         <NuxtLink to="/#about" @click="emit('navigate')">ABOUT</NuxtLink>
       </li>
       <li>
+        <NuxtLink to="/blog" @click="emit('navigate')">WRITING</NuxtLink>
+      </li>
+      <li>
         <NuxtLink to="/#contact" @click="emit('navigate')">CONTACT</NuxtLink>
       </li>
       <li class="divider" aria-hidden="true"></li>
-      <li class="linkedin-svg">
+      <li class="x-svg">
         <NuxtLink
-          :to="site.social.linkedin"
+          :to="site.social.x"
           external
           target="_blank"
           rel="noreferrer"
-          class="svg-link linkedin-svg"
+          class="svg-link x-svg"
         >
-          <img :src="LinkedinSvg" alt="LinkedIn" />
+          <img :src="XSvg" alt="X" />
         </NuxtLink>
       </li>
     </ul>
@@ -48,7 +51,7 @@ const site = useSite()
     li {
       @apply text-primary;
 
-      &.linkedin-svg {
+      &.x-svg {
         @apply ml-auto;
       }
     }

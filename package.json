@@ -18,9 +18,11 @@
   },
   "dependencies": {
     "@canvas-party/vue": "^0.0.22",
+    "@nuxt/content": "^3.13.0",
     "@tailwindcss/postcss": "^4.2.2",
     "@vercel/analytics": "^2.0.1",
     "@vueuse/components": "^14.2.1",
-    "@vueuse/core": "^14.2.1"
+    "@vueuse/core": "^14.2.1",
+    "better-sqlite3": "^12.9.0"
   }
 }

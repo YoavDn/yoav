@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import GithubSvg from '~/assets/imgs/github.svg'
-import LinkedinSvg from '~/assets/imgs/linkedin.svg'
+import XSvg from '~/assets/imgs/x.svg'
 
 const isMenuOpen = ref(false)
 const site = useSite()
@@ -23,6 +23,9 @@ function closeMenu() {
         <ul class="nav-links">
           <li class="nav-link">
             <NuxtLink to="/#about" @click="closeMenu">ABOUT</NuxtLink>
+          </li>
+          <li class="nav-link">
+            <NuxtLink to="/blog" @click="closeMenu">WRITING</NuxtLink>
           </li>
           <li class="nav-link">
             <NuxtLink to="/#contact" @click="closeMenu">CONTACT</NuxtLink>
@@ -51,15 +54,15 @@ function closeMenu() {
               <img :src="GithubSvg" alt="GitHub" />
             </NuxtLink>
           </li>
-          <li class="linkedin-svg">
+          <li class="x-svg">
             <NuxtLink
-              :to="site.social.linkedin"
+              :to="site.social.x"
               external
               target="_blank"
               rel="noreferrer"
-              class="svg-link linkedin-svg"
+              class="svg-link x-svg"
             >
-              <img :src="LinkedinSvg" alt="LinkedIn" />
+              <img :src="XSvg" alt="X" />
             </NuxtLink>
           </li>
         </ul>
@@ -132,7 +135,7 @@ function closeMenu() {
     li {
       @apply bg-lime-300/10 transition-colors;
 
-      &.linkedin-svg {
+      &.x-svg {
         @apply hidden sm:flex;
       }
     }

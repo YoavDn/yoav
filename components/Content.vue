@@ -13,19 +13,14 @@ const { registerElement } = useRevealOnScroll()
       </p>
 
       <p class="scroll-hidden" :ref="registerElement">
-        I build in everything, but my favorite technologies are
-        <span class="link-list">
-          <span class="link">TypeScript</span>,
-          <span class="link">Postgres</span>,
-          <span class="link">Node.js</span>,
-          <span class="link">Vue</span>,
-          <span class="link">React</span>,
-          <span class="link">Python</span>,
-          <span class="link">GraphQL</span>,
-          <span class="link">Kafka</span>,
-          and more.
-        </span>
+        I care about taste, craft, and the small details that make
+        software feel good to use. I'm happiest in the early, messy
+        part of building, when an idea is still figuring out
+        what it wants to be. Every now and then I
+        <NuxtLink to="/blog">write about it</NuxtLink>.
       </p>
+
+      <br/>
 
       <p class="scroll-hidden" :ref="registerElement">
         When I'm not coding, you can usually find me drinking coffee,
@@ -46,16 +41,11 @@ const { registerElement } = useRevealOnScroll()
   @apply max-w-none;
 }
 
-a,
-.link {
+a {
   @apply font-medium text-primary underline underline-offset-4;
 
   &:hover {
     @apply decoration-wavy;
   }
-}
-
-.link-list {
-  @apply inline;
 }
 </style>

@@ -14,7 +14,6 @@ useHead({
   ],
   meta: [
     { property: 'og:see_also', content: site.social.github },
-    { property: 'og:see_also', content: site.social.linkedin },
     { property: 'og:see_also', content: site.social.x },
   ],
 })

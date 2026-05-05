@@ -279,15 +279,13 @@ useHead({
 
 .prose-body a {
   color: rgb(163, 230, 53);
+  font-weight: 500;
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(163, 230, 53, 0.4);
-  transition: text-decoration-color 0.15s ease;
+  text-underline-offset: 4px;
 }
 
 .prose-body a:hover {
-  text-decoration-color: rgb(163, 230, 53);
+  text-decoration-style: wavy;
 }
 
 .prose-body strong {

@@ -15,11 +15,6 @@ function scrollTop() {
     <h2>Contact.</h2>
     <ul class="links">
       <li>
-        <NuxtLink :to="site.social.linkedin" external target="_blank" rel="noreferrer">
-          LinkedIn <img :src="LinkSvg" alt="" />
-        </NuxtLink>
-      </li>
-      <li>
         <NuxtLink :to="site.social.github" external target="_blank" rel="noreferrer">
           GitHub <img :src="LinkSvg" alt="" />
         </NuxtLink>
@@ -56,7 +51,7 @@ function scrollTop() {
   }
 
   .links {
-    @apply mt-2 grid grid-cols-2 gap-4 text-center text-lg text-primary md:grid-cols-4 md:gap-x-12;
+    @apply mt-2 grid grid-cols-2 gap-4 text-center text-lg text-primary md:grid-cols-3 md:gap-x-12;
 
     li {
       @apply text-xl;

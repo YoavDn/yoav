@@ -6,7 +6,6 @@ import DoodleLineSvg4 from '~/assets/imgs/doodle-line4.svg'
 import DoodleLineSvg5 from '~/assets/imgs/doodle-line5.svg'
 import GithubSvg from '~/assets/imgs/github.svg'
 import HeroImg from '~/assets/imgs/hero-img.png'
-import LinkedinSvg from '~/assets/imgs/linkedin.svg'
 import XSvg from '~/assets/imgs/x.svg'
 import DownArrowSvg from '~/assets/imgs/down-arrow.svg'
 import TvNoiseGif from '~/assets/imgs/tv-noise.gif'
@@ -37,16 +36,6 @@ const site = useSite()
         <img class="hero-img" :src="HeroImg" alt="Illustrated portrait of Yoav" />
         <img v-if="!showTvLinks" class="hero-img-tv" :src="TvNoiseGif" alt="" />
         <ul v-else class="tv-links">
-          <li>
-            <NuxtLink
-              :to="site.social.linkedin"
-              external
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img :src="LinkedinSvg" alt="LinkedIn" />
-            </NuxtLink>
-          </li>
           <li>
             <NuxtLink
               :to="site.social.x"
@@ -177,10 +166,6 @@ const site = useSite()
 
       &:nth-child(-n + 3) {
         @apply col-start-2 mx-3 text-end;
-      }
-
-      &:nth-child(4) {
-        @apply col-start-1 row-start-1 ml-2 text-start;
       }
     }
   }
